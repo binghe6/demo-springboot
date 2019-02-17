@@ -1,10 +1,5 @@
 package com.binghe.demo.controller;
 
-import java.util.UUID;
-
-import javax.servlet.http.HttpSession;
-
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +15,9 @@ public class HelloWorldController {
      * @param session
      * @return
      */
-    @GetMapping("getSessionId")
-    String uid(HttpSession session) {
-        session.setAttribute("session", UUID.randomUUID());
-        return session.getId();
-    }
+//    @GetMapping("getSessionId")
+//    String uid(HttpSession session) {
+//        session.setAttribute("session", UUID.randomUUID());
+//        return session.getId();
+//    }
 }
