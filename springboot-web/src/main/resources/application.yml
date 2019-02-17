@@ -1,19 +1,34 @@
 spring:
-    redis:
-        # Redis服务器地址
-        host: 127.0.0.1
-        # Redis服务器连接端口
-        port: 6379
-        # Redis服务器连接密码（默认为空）
-        password: 123456
-        # 连接超时时间（毫秒）
-        timeout: 0
-        pool:
-            # 连接池最大连接数（使用负值表示没有限制）
-            max-active: 8
-            # 连接池最大阻塞等待时间（使用负值表示没有限制）
-            max-wait: -1
-            # 连接池中的最大空闲连接
-            max-idle: 8
-            # 连接池中的最小空闲连接
-            min-idle: 0
+  redis:
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password: 123456
+    # 连接超时时间（毫秒）
+    timeout: 0
+    pool:
+      # 连接池最大连接数（使用负值表示没有限制）
+      max-active: 8
+      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-wait: -1
+      # 连接池中的最大空闲连接
+      max-idle: 8
+      # 连接池中的最小空闲连接
+      min-idle: 0
+  thymeleaf:
+    # 关闭thymeleaf缓存 开发时使用 否则没有实时画面
+    cache: false
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssmdb?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: Abc123D
+mybatis:
+  # 实体类所在的包路径
+  type-aliases-package: com.binghe.demo.pojo
+  # mybatis配置文件路径
+  config-location: classpath:mybatis/mybatis-config.xml
+  # mybatis的映射的xml文件路径
+  mapper-locations: classpath:mybatis/mapper/*.xml

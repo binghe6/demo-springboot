@@ -7,7 +7,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>springboot-web</artifactId>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.binghe.demo</groupId>
@@ -24,12 +24,48 @@
 			<artifactId>springboot-service</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-		
+
 		<!-- 热启动部署 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- thymeleaf模版支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!-- mysql驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<configuration>
+					<!-- 允许移动生成的文件 -->
+					<verbose>true</verbose>
+					<!-- 允许覆盖生成的文件 -->
+					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			<!-- springboot打包插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- 此处只在web层用false，其他模块都用true，表示最后打包的jar包在web层，否则会报错 -->
+					<skip>false</skip>
+					<!-- 热部署要生效此处必须设置为true -->
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

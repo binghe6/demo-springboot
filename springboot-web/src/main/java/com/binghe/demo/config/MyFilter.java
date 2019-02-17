@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.core.annotation.Order;
 
 /**
- * 自定义拦截器
+ * 自定义过滤器
  * @author dongsw
  *
  */
