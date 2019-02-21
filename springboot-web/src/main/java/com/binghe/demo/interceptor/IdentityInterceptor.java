@@ -15,6 +15,7 @@ import com.binghe.demo.common.util.CodeUtil;
 
 /**
  * 身份验证拦截器
+ * token作为用户登陆的唯一凭证，此拦截器验签是为了防止token被篡改
  * @author binghe
  *
  */
@@ -39,7 +40,6 @@ public class IdentityInterceptor implements HandlerInterceptor {
             if (!sign.equals(signature)) {
                 log.error("token:{}, signTimestamp:{}, nonce:{}, toSign:{}, signature:{}, sign:{}", token, signTimestamp, nonce, toSign, signature, sign);
                 // 验签不通过
-                
             }
         }
         
