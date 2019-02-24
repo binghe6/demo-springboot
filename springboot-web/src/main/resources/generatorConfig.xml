@@ -10,7 +10,7 @@
 		</commentGenerator>
 		<!-- 数据库链接URL、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/ssmdb" userId="root"	password="Abc123D" />
+			connectionURL="jdbc:mysql://localhost:3306/binghe_demo" userId="root"	password="Abc123D" />
 		<!-- number类型的字段不转为BigDecimal -->
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false"/>
@@ -29,7 +29,19 @@
 			tableName:表名
 			domainObjectName:映射的实体类名称
 		 -->
-		<table tableName="user" domainObjectName="User"
+		<!-- <table tableName="sys_permission" domainObjectName="SysPermission"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_role" domainObjectName="SysRole"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_role_permission" domainObjectName="SysRolePermission"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_user_role" domainObjectName="SysUserRole"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/> -->
+		<table tableName="sys_user" domainObjectName="SysUser"
 			enableCountByExample="false" enableSelectByExample="false" 
 			enableUpdateByExample="false" enableDeleteByExample="false"/>
 	</context>

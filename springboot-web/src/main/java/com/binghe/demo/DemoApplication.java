@@ -3,13 +3,12 @@ package com.binghe.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.binghe.demo.common.util.SpringAppHolder;
 
 
-@ServletComponentScan// 在SpringBootApplication上使用@ServletComponentScan注解后，Servlet、Filter、Listener可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册，无需其他代码
+//@ServletComponentScan// 在SpringBootApplication上使用@ServletComponentScan注解后，Servlet、Filter、Listener可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册，无需其他代码
 //@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 2 * 60 * 60)// maxInactiveIntervalInSeconds: 设置Session失效时间，使用Redis Session之后，原Boot的server.session.timeout属性不再生效
 @MapperScan("com.binghe.demo.dao")// 扫描dao接口所在的包
 @SpringBootApplication

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binghe.demo.dao.SysPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.binghe.demo.pojo.SysPermission">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="perm_code" jdbcType="VARCHAR" property="permCode" />
+    <result column="perm_name" jdbcType="VARCHAR" property="permName" />
+    <result column="perm_desc" jdbcType="VARCHAR" property="permDesc" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="perm_type" jdbcType="BIT" property="permType" />
+    <result column="menu_index" jdbcType="SMALLINT" property="menuIndex" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="state" jdbcType="BIT" property="state" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, perm_code, perm_name, perm_desc, pid, perm_type, menu_index, url, state, create_date, 
+    update_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_permission
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_permission
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.binghe.demo.pojo.SysPermission">
+    insert into sys_permission (id, perm_code, perm_name, 
+      perm_desc, pid, perm_type, 
+      menu_index, url, state, 
+      create_date, update_date)
+    values (#{id,jdbcType=INTEGER}, #{permCode,jdbcType=VARCHAR}, #{permName,jdbcType=VARCHAR}, 
+      #{permDesc,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, #{permType,jdbcType=BIT}, 
+      #{menuIndex,jdbcType=SMALLINT}, #{url,jdbcType=VARCHAR}, #{state,jdbcType=BIT}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.binghe.demo.pojo.SysPermission">
+    insert into sys_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="permCode != null">
+        perm_code,
+      </if>
+      <if test="permName != null">
+        perm_name,
+      </if>
+      <if test="permDesc != null">
+        perm_desc,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="permType != null">
+        perm_type,
+      </if>
+      <if test="menuIndex != null">
+        menu_index,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="permCode != null">
+        #{permCode,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="permDesc != null">
+        #{permDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="permType != null">
+        #{permType,jdbcType=BIT},
+      </if>
+      <if test="menuIndex != null">
+        #{menuIndex,jdbcType=SMALLINT},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=BIT},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.binghe.demo.pojo.SysPermission">
+    update sys_permission
+    <set>
+      <if test="permCode != null">
+        perm_code = #{permCode,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        perm_name = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="permDesc != null">
+        perm_desc = #{permDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="permType != null">
+        perm_type = #{permType,jdbcType=BIT},
+      </if>
+      <if test="menuIndex != null">
+        menu_index = #{menuIndex,jdbcType=SMALLINT},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=BIT},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.binghe.demo.pojo.SysPermission">
+    update sys_permission
+    set perm_code = #{permCode,jdbcType=VARCHAR},
+      perm_name = #{permName,jdbcType=VARCHAR},
+      perm_desc = #{permDesc,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=INTEGER},
+      perm_type = #{permType,jdbcType=BIT},
+      menu_index = #{menuIndex,jdbcType=SMALLINT},
+      url = #{url,jdbcType=VARCHAR},
+      state = #{state,jdbcType=BIT},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

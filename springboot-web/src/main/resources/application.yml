@@ -24,7 +24,10 @@ spring:
     mode: LEGACYHTML5
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ssmdb?useUnicode=true&characterEncoding=utf-8
+    # 重点：autoReconnect=true 当数据库连接异常中断时，是否自动重新连接，要配置这个utf8mb4才能正确读取
+    # 需要注意的是，在xml配置文件中，url中的&符号需要转义成  &amp;
+    # allowMultiQueries=true 开启批量执行sql
+    url: jdbc:mysql://localhost:3306/binghe_demo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true
     username: root
     password: Abc123D
 #  rabbitmq:
