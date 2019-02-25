@@ -5,7 +5,6 @@ import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.shiro.authc.AuthenticationException;

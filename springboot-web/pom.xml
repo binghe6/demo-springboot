@@ -40,6 +40,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<!-- <version>5.1.8</version> -->
 		</dependency>
 		<!-- 测试模块，包括JUnit、Hamcrest、Mockito -->
 		<dependency>

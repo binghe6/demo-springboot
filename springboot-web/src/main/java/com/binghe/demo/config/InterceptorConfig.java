@@ -6,8 +6,6 @@ import org.springframework.web.servlet.config.annotation.ContentNegotiationConfi
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import com.binghe.demo.interceptor.IdentityInterceptor;
-
 /**
  * 拦截器配置
  * @author binghe

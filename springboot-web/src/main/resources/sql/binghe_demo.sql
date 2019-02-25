@@ -59,7 +59,7 @@ CREATE TABLE `sys_role_permission` (
   `create_date` datetime NOT NULL COMMENT '创建时间',
   KEY `FK9q28ewrhntqeipl1t04kh1be7` (`role_id`),
   KEY `FKomxrs8a388bknvhjokh440waq` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='角色权限关联表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限关联表';
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -88,4 +88,4 @@ CREATE TABLE `sys_user_role` (
   `create_date` datetime NOT NULL COMMENT '创建时间',
   KEY `FKgkmyslkrfeyn9ukmolvek8b8f` (`user_id`),
   KEY `FKhh52n8vd4ny9ff4x9fb8v65qx` (`role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户角色表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户角色表';
