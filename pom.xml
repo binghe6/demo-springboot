@@ -126,15 +126,18 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<!-- rabbitMQ支持 -->
-		<!-- <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-amqp</artifactId> 
+			</dependency> -->
 		<!-- 摘要运算、编码解码相关 -->
 		<dependency>
 			<groupId>apache-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>${codec.version}</version>
+		</dependency>
+		<!-- 发邮件支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 	</dependencies>
 

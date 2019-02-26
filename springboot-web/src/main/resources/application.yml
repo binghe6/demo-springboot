@@ -45,6 +45,24 @@ spring:
     threadNamePrefix: binghe-
     # 等待所有任务结束后再关闭线程池
     waitForTasksToCompleteOnShutdown: true
+  mail:
+    # 不同邮箱的配置不同，QQ邮箱用这个
+    host: smtp.qq.com
+    # 发件人的邮箱地址
+    username: 
+    # 如果是QQ邮箱，此处不是填密码，是开启POP3/SMTP服务后生成的授权码
+    password: 
+    default-encoding: UTF-8
+    # QQ邮箱必须开启SSL连接，QQ邮箱的SMTP(SLL)端口为465或587。 非SSL端口一般为25
+    port: 465
+    properties: 
+      mail:
+        # 开启debug级别能看到更详细的日志
+        debug: true
+        smtp:
+          socketFactory:
+            # 开启SSL连接需要用这个
+            class: javax.net.ssl.SSLSocketFactory
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
