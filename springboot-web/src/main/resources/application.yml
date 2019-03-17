@@ -1,3 +1,6 @@
+wyait:
+  picpath: E:/picture/
+
 spring:
 #  redis:
 #    # Redis服务器地址
@@ -23,52 +26,70 @@ spring:
     # 让html标签书写校验不会那么严格
     mode: LEGACYHTML5
   datasource:
-#    driverClassName: com.mysql.jdbc.Driver
-    # 在mysql连接驱动为8版本时，驱动名用下面这个，如果是旧的版本则用上面的
-    driverClassName: com.mysql.cj.jdbc.Driver
-    # 重点：autoReconnect=true 当数据库连接异常中断时，是否自动重新连接，要配置这个utf8mb4才能正确读取
-    # 需要注意的是，在xml配置文件中，url中的&符号需要转义成  &amp;
-    # allowMultiQueries=true 开启批量执行sql
-    url: jdbc:mysql://localhost:3306/binghe_demo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true
-    username: root
-    password: Abc123D
-  threadpool:
-    # 设置核心线程数
-    corePoolSize: 5
-    # 设置最大线程数
-    maxPoolSize: 10
-    # 设置队列容量
-    queueCapacity: 20
-    # 设置线程活跃时间（秒）
-    keepAliveSeconds: 60
-    # 设置默认线程名称
-    threadNamePrefix: binghe-
-    # 等待所有任务结束后再关闭线程池
-    waitForTasksToCompleteOnShutdown: true
-  mail:
-    # 不同邮箱的配置不同，QQ邮箱用这个
-    host: smtp.qq.com
-    # 发件人的邮箱地址
-    username: 
-    # 如果是QQ邮箱，此处不是填密码，是开启POP3/SMTP服务后生成的授权码
-    password: 
-    default-encoding: UTF-8
-    # QQ邮箱必须开启SSL连接，QQ邮箱的SMTP(SLL)端口为465或587。 非SSL端口一般为25
-    port: 465
-    properties: 
-      mail:
-        # 开启debug级别能看到更详细的日志
-        debug: true
-        smtp:
-          socketFactory:
-            # 开启SSL连接需要用这个
-            class: javax.net.ssl.SSLSocketFactory
+    db1:
+      #driverClassName: com.mysql.jdbc.Driver
+      # 在mysql连接驱动为8版本时，驱动名用下面这个，如果是旧的版本则用上面的
+      driverClassName: com.mysql.cj.jdbc.Driver
+      # 重点：autoReconnect=true 当数据库连接异常中断时，是否自动重新连接，要配置这个utf8mb4才能正确读取
+      # 需要注意的是，在xml配置文件中，url中的&符号需要转义成  &amp;
+      # allowMultiQueries=true 开启批量执行sql
+      url: jdbc:mysql://localhost:3306/binghe_demo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true
+      username: root
+      password: Abc123D
+    db2:
+      #driverClassName: com.mysql.jdbc.Driver
+      # 在mysql连接驱动为8版本时，驱动名用下面这个，如果是旧的版本则用上面的
+      driverClassName: com.mysql.cj.jdbc.Driver
+      # 重点：autoReconnect=true 当数据库连接异常中断时，是否自动重新连接，要配置这个utf8mb4才能正确读取
+      # 需要注意的是，在xml配置文件中，url中的&符号需要转义成  &amp;
+      # allowMultiQueries=true 开启批量执行sql
+      url: jdbc:mysql://localhost:3306/ssmdb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true
+      username: root
+      password: Abc123D
+#  threadpool:
+#    # 设置核心线程数
+#    corePoolSize: 5
+#    # 设置最大线程数
+#    maxPoolSize: 10
+#    # 设置队列容量
+#    queueCapacity: 20
+#    # 设置线程活跃时间（秒）
+#    keepAliveSeconds: 60
+#    # 设置默认线程名称
+#    threadNamePrefix: binghe-
+#    # 等待所有任务结束后再关闭线程池
+#    waitForTasksToCompleteOnShutdown: true
+#  mail:
+#    # 不同邮箱的配置不同，QQ邮箱用这个
+#    host: smtp.qq.com
+#    # 发件人的邮箱地址
+#    username: 
+#    # 如果是QQ邮箱，此处不是填密码，是开启POP3/SMTP服务后生成的授权码
+#    password: 
+#    default-encoding: UTF-8
+#    # QQ邮箱必须开启SSL连接，QQ邮箱的SMTP(SLL)端口为465或587。 非SSL端口一般为25
+#    port: 465
+#    properties: 
+#      mail:
+#        # 开启debug级别能看到更详细的日志
+#        debug: true
+#        smtp:
+#          socketFactory:
+#            # 开启SSL连接需要用这个
+#            class: javax.net.ssl.SSLSocketFactory
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${wyait.picpath}
+  
+
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
 #    username: binghe
 #    password: binghe
 #    virtual-host: /binghemq
+# 以下为mybatis自动化配置，但如果通过java类配置方式，以下可注释掉
 #mybatis:
 #  # 实体类所在的包路径
 #  type-aliases-package: com.binghe.demo.pojo

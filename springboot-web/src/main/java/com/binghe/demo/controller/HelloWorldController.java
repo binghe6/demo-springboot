@@ -2,19 +2,15 @@ package com.binghe.demo.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.binghe.demo.thread.Hello;
 
 @RestController
 @Slf4j
 public class HelloWorldController {
 	
-	@Autowired
-	private Hello hello;
+//	@Autowired
+//	private Hello hello;
 	
     @RequestMapping("/hello")
     public String index() {
@@ -32,12 +28,12 @@ public class HelloWorldController {
 //        return session.getId();
 //    }
     
-    @GetMapping("/test")
-    public void test() {
-    	hello.sayHello("123");
-		log.info(">>>>>>>>>>>> 1");
-		log.info(">>>>>>>>>>>> 2");
-		log.info(">>>>>>>>>>>> 3");
-		log.info(">>>>>>>>>>>> 4");
-    }
+//    @GetMapping("/test")
+//    public void test() {
+//    	hello.sayHello("123");
+//		log.info(">>>>>>>>>>>> 1");
+//		log.info(">>>>>>>>>>>> 2");
+//		log.info(">>>>>>>>>>>> 3");
+//		log.info(">>>>>>>>>>>> 4");
+//    }
 }

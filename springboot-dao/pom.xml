@@ -18,10 +18,10 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 		</dependency>
 		<!-- shiro与spring整合 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>

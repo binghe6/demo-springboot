@@ -10,38 +10,26 @@
 		</commentGenerator>
 		<!-- 数据库链接URL、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/binghe_demo" userId="root"	password="Abc123D" />
+			connectionURL="jdbc:mysql://localhost:3306/ssmdb" userId="root"	password="Abc123D" />
 		<!-- number类型的字段不转为BigDecimal -->
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false"/>
 		</javaTypeResolver>
 		<!-- 生成model类的包名和位置 -->
-		<javaModelGenerator targetPackage="com.binghe.demo.pojo" targetProject="src/main/java">
+		<javaModelGenerator targetPackage="com.binghe.demo.pojo.db2" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="false" />
 		</javaModelGenerator>
 		<!-- XML映射文件生成的位置（目标包）,resources文件夹 -->
-		<sqlMapGenerator targetPackage="mybatis/mapper/" targetProject="src/main/resources" />
+		<sqlMapGenerator targetPackage="mybatis/mapper/db2" targetProject="src/main/resources" />
 		<!-- 生成DAO类的包名和位置 -->
-		<javaClientGenerator targetPackage="com.binghe.demo.dao" targetProject="src/main/java" type="XMLMAPPER" />
+		<javaClientGenerator targetPackage="com.binghe.demo.dao.db2" targetProject="src/main/java" type="XMLMAPPER" />
 		<!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->
 		<!-- 
 			tableName:表名
 			domainObjectName:映射的实体类名称
 		 -->
-		<!-- <table tableName="sys_permission" domainObjectName="SysPermission"
-			enableCountByExample="false" enableSelectByExample="false" 
-			enableUpdateByExample="false" enableDeleteByExample="false"/>
-		<table tableName="sys_role" domainObjectName="SysRole"
-			enableCountByExample="false" enableSelectByExample="false" 
-			enableUpdateByExample="false" enableDeleteByExample="false"/>
-		<table tableName="sys_role_permission" domainObjectName="SysRolePermission"
-			enableCountByExample="false" enableSelectByExample="false" 
-			enableUpdateByExample="false" enableDeleteByExample="false"/>
-		<table tableName="sys_user_role" domainObjectName="SysUserRole"
-			enableCountByExample="false" enableSelectByExample="false" 
-			enableUpdateByExample="false" enableDeleteByExample="false"/> -->
-		<table tableName="sys_user" domainObjectName="SysUser"
+		<table tableName="user" domainObjectName="User"
 			enableCountByExample="false" enableSelectByExample="false" 
 			enableUpdateByExample="false" enableDeleteByExample="false"/>
 	</context>

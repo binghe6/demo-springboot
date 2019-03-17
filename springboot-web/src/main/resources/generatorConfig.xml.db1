@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 数据库驱动包位置，即mysql-connector-java依赖的本地路径 -->
+	<classPathEntry	location="F:\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/binghe_demo" userId="root"	password="Abc123D" />
+		<!-- number类型的字段不转为BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+		<!-- 生成model类的包名和位置 -->
+		<javaModelGenerator targetPackage="com.binghe.demo.pojo" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="false" />
+		</javaModelGenerator>
+		<!-- XML映射文件生成的位置（目标包）,resources文件夹 -->
+		<sqlMapGenerator targetPackage="mybatis/mapper/" targetProject="src/main/resources" />
+		<!-- 生成DAO类的包名和位置 -->
+		<javaClientGenerator targetPackage="com.binghe.demo.dao" targetProject="src/main/java" type="XMLMAPPER" />
+		<!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->
+		<!-- 
+			tableName:表名
+			domainObjectName:映射的实体类名称
+		 -->
+		<!-- <table tableName="sys_permission" domainObjectName="SysPermission"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_role" domainObjectName="SysRole"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_role_permission" domainObjectName="SysRolePermission"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+		<table tableName="sys_user_role" domainObjectName="SysUserRole"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/> -->
+		<table tableName="sys_user" domainObjectName="SysUser"
+			enableCountByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"/>
+	</context>
+</generatorConfiguration>

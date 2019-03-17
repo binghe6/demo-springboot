@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>测试selected标签</title>
+</head>
+<body>
+	<form action="/Insurance/assign/class/create" method="post">
+		<table border="1">
+			<tr>
+				<td>请选择userId:</td>
+				<td>
+					<select id="userId" name="userId">
+						<option value=""> -- 请选择 -- </option>
+						<option th:each="user:${userList}"  th:value="|${user.id},${user.mobile}|" th:text="|${user.username}+${user.mobile}|" ></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>请选择mobile</td>
+				<td>
+					<select id="mobile" name="mobile">                                         
+             
+              		</select>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" th:value="${userList}" id="userList">
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

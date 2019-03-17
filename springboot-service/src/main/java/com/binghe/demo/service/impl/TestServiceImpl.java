@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.binghe.demo.dao.SysRolePermissionMapper;
-import com.binghe.demo.dao.SysUserRoleMapper;
-import com.binghe.demo.pojo.SysRolePermission;
-import com.binghe.demo.pojo.SysUserRole;
+import com.binghe.demo.dao.db1.SysRolePermissionMapper;
+import com.binghe.demo.dao.db1.SysUserRoleMapper;
+import com.binghe.demo.pojo.db1.SysRolePermission;
+import com.binghe.demo.pojo.db1.SysUserRole;
 import com.binghe.demo.service.ITestService;
 
 @Service
@@ -30,7 +30,7 @@ public class TestServiceImpl implements ITestService {
 	public void testTrx() {
 		SysUserRole userRole = SysUserRole.of().setCreateDate(new Date()).setRoleId(3).setUserId(3);
 		sysUserRoleMapper.insert(userRole);
-		testC(3);
+//		testC(3);
 	}
 	
 	/**
