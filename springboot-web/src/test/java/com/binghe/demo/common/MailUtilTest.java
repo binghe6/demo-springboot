@@ -22,7 +22,7 @@
 //	
 //	@Test
 //	public void test() {
-//		mailUtil.sendSimpleMail("dongsunwei@ichangtou.com", "这是简单邮件的标题", "这是简单邮件的内容");
+//		mailUtil.sendSimpleMail("", "这是简单邮件的标题", "这是简单邮件的内容");
 //	}
 //	
 //	@Test
@@ -32,13 +32,13 @@
 //	            "    <h3>hello world ! 这是一封Html邮件!</h3>\n" +
 //	            "</body>\n" +
 //	            "</html>";
-//		mailUtil.sendHtmlMail("dongsunwei@ichangtou.com","html邮件",content);
+//		mailUtil.sendHtmlMail("","html邮件",content);
 //	}
 //	
 //	@Test
 //	public void sendAttachmentsMail() {
 //	    String filePath="C:/Users/binghe/Desktop/binghe_demo.sql";
-//	    mailUtil.sendAttachmentsMail("dongsunwei@ichangtou.com", "带附件的邮件", "有附件，请查收！", filePath);
+//	    mailUtil.sendAttachmentsMail("", "带附件的邮件", "有附件，请查收！", filePath);
 //	}
 //	
 //	@Test
@@ -47,7 +47,7 @@
 //	    String content="<html><body>这是有图片的邮件：<img src=\'cid:" + rscId + "\' ></body></html>";
 //	    String imgPath = "C:/Users/binghe/Desktop/temp.jpg";
 //
-//	    mailUtil.sendInlineResourceMail("dongsunwei@ichangtou.com", "这是有图片的邮件", content, imgPath, rscId);
+//	    mailUtil.sendInlineResourceMail("", "这是有图片的邮件", content, imgPath, rscId);
 //	}
 //	
 //	@Test
@@ -58,6 +58,6 @@
 //	    // 第一个参数是作为模版的html文件名
 //	    String emailContent = templateEngine.process("emailTemplate", context);
 //
-//	    mailUtil.sendHtmlMail("dongsunwei@ichangtou.com","主题：这是模板邮件",emailContent);
+//	    mailUtil.sendHtmlMail("","主题：这是模板邮件",emailContent);
 //	}
 //}
